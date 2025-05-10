@@ -1,0 +1,146 @@
+
+#include <iostream>
+#include <vector>
+
+class Document {
+public:
+    virtual ~Document() = default;
+    virtual void AddHeader(std::string_view title) = 0;
+    virtual void AddBody(std::string_view text) = 0;
+
+    virtual std::string GetContent() = 0;
+};
+
+class HTMLElement {
+public:
+    HTMLElement(std::string_view name, std::string_view text="")
+        : name_(name), text_(text), children_()
+    {}
+
+    void AddChild(const HTMLElement& child) {
+        children_.push_back(child);
+    }
+
+    std::string GetStr() const {
+        std::string content{};
+        content += "<" + name_ + ">";
+        if (!text_.empty()) content += text_;
+        for (const HTMLElement& child : children_) {
+            content += child.GetStr();
+        }
+        content += "</" + name_ + ">";
+        return content;
+    }
+
+private:
+    std::string name_;
+    std::string text_;
+    std::vector<HTMLElement> children_;
+};
+
+class HTMLDocument : public Document {
+public:
+    HTMLDocument()
+        : root_{"html"}
+    {}
+
+    virtual ~HTMLDocument() = default;
+
+    virtual void AddHeader(std::string_view title) {
+        HTMLElement header{"head"};
+        HTMLElement t{"title", title};
+        header.AddChild(t);
+        root_.AddChild(header);
+    }
+
+    virtual void AddBody(std::string_view text) {
+        HTMLElement body{"body", text};
+        HTMLElement h1{"h1", "ЗАГОЛОВОК"};
+        body.AddChild(h1);
+        root_.AddChild(body);
+    }
+
+    virtual std::string GetContent() {
+        return root_.GetStr();
+    }
+
+private:
+    HTMLElement root_;
+};
+
+class Builder {
+public:
+    virtual ~Builder() = default;
+
+    virtual void CreateHeader() {}
+    virtual void CreateBody() {}
+    virtual void CreateFooter() {}
+
+    virtual Document* GetDocument() = 0;
+};
+
+/*
+<html>
+<head> <title> title </title> </head>
+<body> text </body>
+</html>
+*/
+
+class HTMLBuilder : public Builder {
+public:
+    HTMLBuilder() = default;
+    virtual ~HTMLBuilder() = default;
+
+    virtual void CreateHeader() override {
+        document_.AddHeader("HEADER");
+    }
+
+    virtual void CreateBody() override {
+        document_.AddBody("BODY");
+    }
+
+    virtual Document* GetDocument() {
+        return &document_;
+    }
+
+private:
+    HTMLDocument document_;
+};
+
+class Director {
+public:
+    virtual ~Director() = default;
+    virtual Document* CreateDocument() = 0;
+    virtual void SetBuilder(Builder& builder) = 0;
+};
+
+
+class HTMLDirector : public Director {
+public:
+    HTMLDirector(Builder& builder)
+        : builder_(builder)
+    {}
+
+    virtual ~HTMLDirector() override = default;
+
+    void SetBuilder(Builder &builder) {
+        builder_ = builder;
+    }
+
+    Document* CreateDocument() {
+        builder_.CreateHeader();
+        builder_.CreateBody();
+        builder_.CreateFooter();
+        return builder_.GetDocument();
+    }
+private:
+    Builder& builder_;
+};
+
+int main() {
+    HTMLBuilder html_builder;
+    HTMLDirector html_director(html_builder);
+    Document* doc = html_director.CreateDocument();  // cast
+    std::cout << doc->GetContent();
+    return 0;
+}
