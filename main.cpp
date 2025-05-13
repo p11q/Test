@@ -1,13 +1,13 @@
 #include <iostream>
 #include <vector>
-#include <insert_builder/insert_builder.h>
-#include <select_builder/select_builder.h>
 
 #include "SQLiteCpp/Database.h"
 #include "create_build/create_build.h"
 #include "directors/create_director.h"
 #include "directors/insert_director.h"
 #include "directors/select_director.h"
+#include "insert_builder/insert_builder.h"
+#include "select_builder/select_builder.h"
 
 
 // TODO: как передать в конструктор класса const ссылку на БД ? А иначе при выходе из класса для БД вызывается деструктор
@@ -85,7 +85,8 @@ void InsertValues(const std::vector<std::vector<std::string>> &name_columns, std
 int main() {
     try {
         // Создание базы данных
-        SQLite::Database db("/home/user/Projects/C++/Tests/test.db3", SQLite::OPEN_READWRITE|SQLite::OPEN_CREATE);
+        SQLite::Database db ("/home/user/C++/Test/test.db3", SQLite::OPEN_READWRITE|SQLite::OPEN_CREATE);
+        std::shared_ptr<SQLite::Database> db_ptr(&db);
 
         // Имя базы данных
         std::cout << "Enter of the name for database: ";
@@ -97,23 +98,24 @@ int main() {
         UserInputColumns(name_columns);
 
         // Создание таблицы в базе данных
-        CreateBuilder create_builder(db, name_table, name_columns);
+        CreateBuilder create_builder(&db_ptr.operator*(), name_table, name_columns);
         CreateDirector create_director(create_builder);
         create_director.CreateSqliteRequest();
 
         // Заполнение таблицы
         std::vector<std::string> columns_values{};
         InsertValues(name_columns, columns_values);
-        InsertBuilder insert_builder(db, name_table,columns_values);
+        InsertBuilder insert_builder(*db_ptr, name_table,columns_values);
         InsertDirector insert_director(insert_builder);
         insert_director.CreateSqliteRequest();
 
         // Вывод таблицы
         std::vector<std::string> select_arguments{};
         UserOutput(select_arguments);
-        SelectBuilder select_builder(db, name_table, select_arguments);
+        SelectBuilder select_builder(*db_ptr, name_table, select_arguments);
         SelectDirector select_director(select_builder);
         select_director.CreateSqliteRequest();
+
 
     } catch (std::exception& e)
     {

@@ -24,7 +24,9 @@ target_include_directories(Tests PUBLIC "${CMAKE_SOURCE_DIR}/lib/JSON/include"
                                         "${CMAKE_SOURCE_DIR}/directors/"
                                         )
 
-add_subdirectory("${CMAKE_SOURCE_DIR}/lib/SQLiteCpp")
+add_subdirectory("${CMAKE_SOURCE_DIR}/lib/SQLiteCpp"
+                 "${CMAKE_SOURCE_DIR}/google_test")
+
 target_link_libraries(Tests SQLiteCpp
         sqlite3
         pthread

@@ -12,7 +12,7 @@ private:
     SQLite::Database db_;
     Create create_table_;
 public:
-    CreateBuilder(SQLite::Database &db, const std::string_view name_table, const std::vector<std::vector<std::string>> &name_columns)
+    CreateBuilder(SQLite::Database sdb, const std::string_view name_table, const std::vector<std::vector<std::string>> &name_columns)
         : db_(std::move(db)), create_table_{name_table, name_columns}{}
 
     void CreateSQLRequest() override {
