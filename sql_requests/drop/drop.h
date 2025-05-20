@@ -3,21 +3,24 @@
 
 #include "sql_requests.h"
 
-class Drop : public SqliteRequest{
+
+class Drop : public ISQLRequest{
 private:
-    std::string name_table_;
-    std::string request_{"DROP TABLE IF EXISTS "};
+    std::string request_{"DROP TABLE"};
+    std::string table_name_;
+    std::vector<std::string> column_names_;
 public:
-    explicit Drop(const std::string_view name_table)
-        :name_table_(name_table) {}
+    explicit Drop() = default;
+    ~Drop() override = default;
 
-    void SQL_request() override {
-        request_ += name_table_;
-    };
-
-    std::string GetRequest() override {
-        return request_;
+    void AddTableName(const std::string& table_name) override {
+        table_name_ = table_name;
     }
+
+    std::string GetRequestPlainText() override {
+        request_ += " " + table_name_;
+        return request_;
+    };
 };
 
 

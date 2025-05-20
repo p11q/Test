@@ -2,19 +2,25 @@
 #define INSERT_DIRECTOR_H
 
 #include "builder.h"
+#include "director.h"
 
-class InsertDirector : public Director {
+class InsertDirector : public IDirector {
 private:
-    Builder& builder_;
+    IBuilder& builder_;
 public:
-    explicit InsertDirector(Builder& builder)
+    explicit InsertDirector(IBuilder& builder)
         : builder_(builder){}
 
     void CreateSqliteRequest() override {
-        builder_.CreateSQLRequest();
-        builder_.UsegeSQLRequests();
+        builder_.CreateTableName();
+        builder_.CreateColumns();
+        builder_.CreateValues();
+        builder_.GetRequest();
     }
 
+    void SetBuilder(IBuilder &builder) override {
+        builder_ = builder;
+    }
 };
 
 

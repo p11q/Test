@@ -3,19 +3,19 @@
 
 
 #include "builder.h"
+#include "director.h"
 
-class DropDirector : public Director {
+class DropDirector : public IDirector {
 private:
-    Builder& builder_;
+    IBuilder& builder_;
 public:
-    explicit DropDirector(Builder& builder)
+    explicit DropDirector(IBuilder& builder)
         : builder_(builder){}
 
     void CreateSqliteRequest() override {
-        builder_.CreateSQLRequest();
-        builder_.UsegeSQLRequests();
+        builder_.CreateTableName();
+        builder_.GetRequest();
     }
 
 };
-
 #endif //DROP_DIRECTOR_H

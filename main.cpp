@@ -2,33 +2,35 @@
 #include <vector>
 
 #include "SQLiteCpp/Database.h"
-#include "create_build/create_build.h"
 #include "directors/create_director.h"
 #include "directors/insert_director.h"
 #include "directors/select_director.h"
-#include "insert_builder/insert_builder.h"
-#include "select_builder/select_builder.h"
 
+#include "builders/create_build.h"
+#include "builders/insert_builder.h"
+#include "builders/select_builder.h"
 
-// TODO: как передать в конструктор класса const ссылку на БД ? А иначе при выходе из класса для БД вызывается деструктор
+ /*TODO: Часто использую:
+    std::cin.ignore(std::cin.rdbuf()->in_avail());
+    std::cin.get();
+    Это нормально ? */
 
-void UserInputColumns(std::vector<std::vector<std::string>> &name_columns) {
+void UserInputColumns(std::vector<std::string> &column_name_list, std::map<std::string, std::string> &column_type) {
 
     int count_columns;
     std::cout << "Enter the number of columns: ";
     std::cin >> count_columns;
-    name_columns.resize(count_columns, std::vector<std::string>());
 
     std::cin.ignore(std::cin.rdbuf()->in_avail());
     std::cin.get();
 
-    for (int i{0}; i < count_columns; i++) {
+    for (int i = 0; i < count_columns; i++) {
         std::cout << "Enter the name of the column: ";
 
-        std::string name_column;
-        std::getline(std::cin, name_column);;
+        std::string column_name;
+        std::getline(std::cin, column_name);;
 
-        name_columns[i].push_back(name_column);
+        column_name_list.push_back(column_name);
 
         std::cin.ignore(std::cin.rdbuf()->in_avail());
 
@@ -36,7 +38,7 @@ void UserInputColumns(std::vector<std::vector<std::string>> &name_columns) {
         std::string data_type_column;
         std::getline(std::cin, data_type_column);
 
-        name_columns[i].push_back(data_type_column);
+        column_type[column_name_list[i]] = data_type_column;
 
         std::cin.ignore(std::cin.rdbuf()->in_avail());
     }
@@ -52,24 +54,31 @@ void UserOutputManual() {
 }
 
 void UserOutput(std::vector<std::string> &vec_name_first_argument_select) {
-    UserOutputManual();
+    std::cin.ignore(std::cin.rdbuf()->in_avail());
+    std::cin.get();
+
+    UserOutputManual(); // TODO: Использование флага ?
     int flag{0};
 
     while (flag == 0) {
         std::cout << ">> ";
-        std::string name_first_argument_select;
-        std::getline(std::cin, name_first_argument_select);
-        if (name_first_argument_select == "0") {
+        std::string name_argument_select_list;
+
+        std::getline(std::cin, name_argument_select_list);
+
+        if (name_argument_select_list == "0") {
             flag++;
         } else {
-            vec_name_first_argument_select.push_back(name_first_argument_select);
+            vec_name_first_argument_select.push_back(name_argument_select_list);
         }
     }
 }
 
-void InsertValues(const std::vector<std::vector<std::string>> &name_columns, std::vector<std::string> &columns_values) {
-    for (int i{0}; i < name_columns.size(); i++) {
-            std::cout << "Enter the column value " <<  name_columns[0][i] << ": ";
+void InsertValues(const std::vector<std::string> &column_name_list, std::vector<std::string> &columns_values) {
+    std::cin.ignore(std::cin.rdbuf()->in_avail());
+
+    for (int i{0}; i < column_name_list.size(); i++) {
+            std::cout << "\nEnter the column value " <<  column_name_list[i] << ": ";
 
             std::string value_column;
             std::getline(std::cin, value_column);
@@ -77,16 +86,15 @@ void InsertValues(const std::vector<std::vector<std::string>> &name_columns, std
             columns_values.push_back(value_column);
 
             std::cin.ignore(std::cin.rdbuf()->in_avail());
-            std::cout << std::endl;
-
     }
+    //TODO: После крайнего Enter приходится еще раз нажимать Enter
 }
 
 int main() {
     try {
         // Создание базы данных
-        SQLite::Database db ("/home/user/C++/Test/test.db3", SQLite::OPEN_READWRITE|SQLite::OPEN_CREATE);
-        std::shared_ptr<SQLite::Database> db_ptr(&db);
+        const auto db = std::make_shared<SQLite::Database> ("/home/user/C++/Test/test.db3", SQLite::OPEN_READWRITE|SQLite::OPEN_CREATE);
+
 
         // Имя базы данных
         std::cout << "Enter of the name for database: ";
@@ -94,28 +102,31 @@ int main() {
         std::cin >> name_table;
 
         // Наименование столбцов
-        std::vector<std::vector<std::string>> name_columns{{}};
-        UserInputColumns(name_columns);
+        std::vector<std::string> column_name_list{};
+        std::map<std::string, std::string> column_type;
+        UserInputColumns(column_name_list, column_type);
+
 
         // Создание таблицы в базе данных
-        CreateBuilder create_builder(&db_ptr.operator*(), name_table, name_columns);
-        CreateDirector create_director(create_builder);
+        CreateBuilder create_builder(db, name_table, column_name_list, column_type);
+        CreateDirector create_director (create_builder);
         create_director.CreateSqliteRequest();
 
+
         // Заполнение таблицы
-        std::vector<std::string> columns_values{};
-        InsertValues(name_columns, columns_values);
-        InsertBuilder insert_builder(*db_ptr, name_table,columns_values);
+        std::vector<std::string> column_values{};
+        InsertValues(column_name_list, column_values);
+        InsertBuilder insert_builder(db, name_table,column_name_list, column_values);
         InsertDirector insert_director(insert_builder);
         insert_director.CreateSqliteRequest();
+
 
         // Вывод таблицы
         std::vector<std::string> select_arguments{};
         UserOutput(select_arguments);
-        SelectBuilder select_builder(*db_ptr, name_table, select_arguments);
+        SelectBuilder select_builder(db, name_table, select_arguments);
         SelectDirector select_director(select_builder);
         select_director.CreateSqliteRequest();
-
 
     } catch (std::exception& e)
     {

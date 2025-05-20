@@ -1,12 +1,10 @@
 #include "select.h"
 
-void Select::SQL_request() {
-    for (int i{0}; i < columns_.size(); i++) {
-        if(i != columns_.size() - 1) {
-            request_ += columns_[i] + ", ";
-        } else {
-            request_ += columns_[i];
-        }
+std::string Select::GetRequestPlainText() {
+    for (const auto& column_name : column_names_) {
+        request_ += " " + column_name + " ";
     }
-    request_ += " FROM " + name_table_;
+    request_ += "FROM " + table_name_;
+
+    return request_;
 }

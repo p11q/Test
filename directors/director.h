@@ -4,11 +4,11 @@
 #include "builder.h"
 
 
-class Director {
+class IDirector {
 public:
-    virtual ~Director() = default;
+    virtual ~IDirector() = default;
     virtual void CreateSqliteRequest() = 0;
-    //virtual void SetBuilder(Builder& builder) = 0;
+    virtual void SetBuilder(IBuilder& builder) = 0;
 };
 
 #endif //DIRECTOR_H

@@ -66,15 +66,15 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "/home/user/C++/Test/google_test/cmake/SQLiteCppConfigVersion.cmake"
-  "/home/user/C++/Test/google_test/cmake/SQLiteCppConfig.cmake"
-  "/home/user/C++/Test/google_test/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "/home/user/C++/Test/google_test/sqlite3/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "/home/user/C++/Test/unit_tests/cmake/SQLiteCppConfigVersion.cmake"
+  "/home/user/C++/Test/unit_tests/cmake/SQLiteCppConfig.cmake"
+  "/home/user/C++/Test/unit_tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "/home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Tests.dir/DependInfo.cmake"
-  "/home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/DependInfo.cmake"
-  "/home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/DependInfo.cmake"
+  "CMakeFiles/My_Tests.dir/DependInfo.cmake"
+  "/home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/DependInfo.cmake"
+  "/home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/DependInfo.cmake"
   )

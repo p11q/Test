@@ -1,28 +1,33 @@
 #ifndef INSERT_H
 #define INSERT_H
 
-#include <utility>
 #include <vector>
 
 #include "sql_requests.h"
 
-
-class Insert : public SqliteRequest{
+class Insert : public ISQLRequest{
 private:
-    std::string name_table_;
-    std::vector<std::string> columns_values_;
-    std::string request_{"INSERT INTO "};
+    std::string request_{"INSERT INTO"};
+    std::string table_name_;
+    std::vector<std::string> column_names_;
+    std::vector<std::string> values_;
 public:
-    explicit Insert(const std::string_view name_table, std::vector<std::string> columns_values)
-        :name_table_(name_table),  columns_values_(std::move(columns_values)){}
+    explicit Insert() = default;
+    ~Insert() override = default;
 
-    void SQL_request() override;
-
-    std::string GetRequest() override {
-        // INSERT INTO test VALUES (...)
-        return request_;
+    void AddTableName(const std::string& table_name) override {
+        table_name_ = table_name;
     }
-};
 
+    void AddColumns(const std::vector<std::string>& columns) override {
+        column_names_ = columns;
+    }
+
+    void AddValues(const std::vector<std::string> &values) override {
+        values_ = values;
+    }
+
+    std::string GetRequestPlainText() override;
+};
 
 #endif //INSERT_H

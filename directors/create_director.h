@@ -2,17 +2,24 @@
 #define CREATE_DIRECTOR_H
 
 #include <director.h>
+#include "builder.h"
 
-class CreateDirector : public Director {
+class CreateDirector : public IDirector {
 private:
-    Builder& builder_;
+    IBuilder& builder_;
 public:
-    explicit CreateDirector(Builder& builder)
+    explicit CreateDirector(IBuilder& builder)
         : builder_(builder){}
 
     void CreateSqliteRequest() override {
-        builder_.CreateSQLRequest();
-        builder_.UsegeSQLRequests();
+        builder_.CreateTableName();
+        builder_.CreateColumns();
+        builder_.CreateColumnTypes();
+        builder_.GetRequest();
+    }
+
+    void SetBuilder(IBuilder &builder) override {
+        builder_ = builder;
     }
 
 };

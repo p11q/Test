@@ -3,17 +3,23 @@
 
 
 #include "builder.h"
+#include "director.h"
 
-class SelectDirector : public Director {
+class SelectDirector : public IDirector {
 private:
-    Builder& builder_;
+    IBuilder& builder_;
 public:
-    explicit SelectDirector(Builder& builder)
+    explicit SelectDirector(IBuilder& builder)
         : builder_(builder){}
 
     void CreateSqliteRequest() override {
-        builder_.CreateSQLRequest();
-        builder_.UsegeSQLRequests();
+        builder_.CreateTableName();
+        builder_.CreateColumns();
+        builder_.GetRequest();
+    }
+
+    void SetBuilder(IBuilder &builder) override {
+        builder_ = builder;
     }
 
 };

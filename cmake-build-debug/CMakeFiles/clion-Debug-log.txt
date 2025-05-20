@@ -8,7 +8,7 @@ CMake Deprecation Warning at lib/SQLiteCpp/CMakeLists.txt:7 (cmake_minimum_requi
   to work with policies introduced by <max> or earlier.
 
 
--- Using c++ standard c++17
+-- Using c++ standard c++20
 -- CMake version: 3.31.6
 -- Project version: 3.3.2
 -- Using Stack Protection hardening
@@ -20,6 +20,6 @@ CMake Deprecation Warning at lib/SQLiteCpp/CMakeLists.txt:7 (cmake_minimum_requi
 -- SQLITECPP_RUN_DOXYGEN OFF
 -- SQLITECPP_BUILD_EXAMPLES OFF
 -- SQLITECPP_BUILD_TESTS OFF
--- Configuring done (0.4s)
+-- Configuring done (0.2s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/user/C++/Test/cmake-build-debug

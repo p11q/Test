@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/My_Tests.dir/link.d CMakeFiles/My_Tests.dir/main.cpp.o CMakeFiles/My_Tests.dir/sql_requests/insert/insert.cpp.o CMakeFiles/My_Tests.dir/sql_requests/select/select.cpp.o -o My_Tests  /home/user/C++/Test/unit_tests/libSQLiteCpp.a /home/user/C++/Test/unit_tests/sqlite3/libsqlite3.a -lpthread -ldl

@@ -63,161 +63,161 @@ CMAKE_BINARY_DIR = /home/user/C++/Test/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Tests.dir/all
-all: /home/user/C++/Test/google_test/all
+all: CMakeFiles/My_Tests.dir/all
+all: /home/user/C++/Test/unit_tests/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/Tests.dir/codegen
-codegen: /home/user/C++/Test/google_test/codegen
+codegen: CMakeFiles/My_Tests.dir/codegen
+codegen: /home/user/C++/Test/unit_tests/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
-preinstall: /home/user/C++/Test/google_test/preinstall
+preinstall: /home/user/C++/Test/unit_tests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Tests.dir/clean
-clean: /home/user/C++/Test/google_test/clean
+clean: CMakeFiles/My_Tests.dir/clean
+clean: /home/user/C++/Test/unit_tests/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory /home/user/C++/Test/google_test
+# Directory level rules for directory /home/user/C++/Test/unit_tests
 
 # Recursive "all" directory target.
-/home/user/C++/Test/google_test/all: /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/all
-/home/user/C++/Test/google_test/all: /home/user/C++/Test/google_test/sqlite3/all
-.PHONY : /home/user/C++/Test/google_test/all
+/home/user/C++/Test/unit_tests/all: /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/all
+/home/user/C++/Test/unit_tests/all: /home/user/C++/Test/unit_tests/sqlite3/all
+.PHONY : /home/user/C++/Test/unit_tests/all
 
 # Recursive "codegen" directory target.
-/home/user/C++/Test/google_test/codegen: /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/codegen
-/home/user/C++/Test/google_test/codegen: /home/user/C++/Test/google_test/sqlite3/codegen
-.PHONY : /home/user/C++/Test/google_test/codegen
+/home/user/C++/Test/unit_tests/codegen: /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/codegen
+/home/user/C++/Test/unit_tests/codegen: /home/user/C++/Test/unit_tests/sqlite3/codegen
+.PHONY : /home/user/C++/Test/unit_tests/codegen
 
 # Recursive "preinstall" directory target.
-/home/user/C++/Test/google_test/preinstall: /home/user/C++/Test/google_test/sqlite3/preinstall
-.PHONY : /home/user/C++/Test/google_test/preinstall
+/home/user/C++/Test/unit_tests/preinstall: /home/user/C++/Test/unit_tests/sqlite3/preinstall
+.PHONY : /home/user/C++/Test/unit_tests/preinstall
 
 # Recursive "clean" directory target.
-/home/user/C++/Test/google_test/clean: /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/clean
-/home/user/C++/Test/google_test/clean: /home/user/C++/Test/google_test/sqlite3/clean
-.PHONY : /home/user/C++/Test/google_test/clean
+/home/user/C++/Test/unit_tests/clean: /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/clean
+/home/user/C++/Test/unit_tests/clean: /home/user/C++/Test/unit_tests/sqlite3/clean
+.PHONY : /home/user/C++/Test/unit_tests/clean
 
 #=============================================================================
-# Directory level rules for directory /home/user/C++/Test/google_test/sqlite3
+# Directory level rules for directory /home/user/C++/Test/unit_tests/sqlite3
 
 # Recursive "all" directory target.
-/home/user/C++/Test/google_test/sqlite3/all: /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/all
-.PHONY : /home/user/C++/Test/google_test/sqlite3/all
+/home/user/C++/Test/unit_tests/sqlite3/all: /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/all
+.PHONY : /home/user/C++/Test/unit_tests/sqlite3/all
 
 # Recursive "codegen" directory target.
-/home/user/C++/Test/google_test/sqlite3/codegen: /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/codegen
-.PHONY : /home/user/C++/Test/google_test/sqlite3/codegen
+/home/user/C++/Test/unit_tests/sqlite3/codegen: /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/codegen
+.PHONY : /home/user/C++/Test/unit_tests/sqlite3/codegen
 
 # Recursive "preinstall" directory target.
-/home/user/C++/Test/google_test/sqlite3/preinstall:
-.PHONY : /home/user/C++/Test/google_test/sqlite3/preinstall
+/home/user/C++/Test/unit_tests/sqlite3/preinstall:
+.PHONY : /home/user/C++/Test/unit_tests/sqlite3/preinstall
 
 # Recursive "clean" directory target.
-/home/user/C++/Test/google_test/sqlite3/clean: /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/clean
-.PHONY : /home/user/C++/Test/google_test/sqlite3/clean
+/home/user/C++/Test/unit_tests/sqlite3/clean: /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/clean
+.PHONY : /home/user/C++/Test/unit_tests/sqlite3/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Tests.dir
+# Target rules for target CMakeFiles/My_Tests.dir
 
 # All Build rule for target.
-CMakeFiles/Tests.dir/all: /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/all
-CMakeFiles/Tests.dir/all: /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12,13,14,15,16,17,18 "Built target Tests"
-.PHONY : CMakeFiles/Tests.dir/all
+CMakeFiles/My_Tests.dir/all: /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/all
+CMakeFiles/My_Tests.dir/all: /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target My_Tests"
+.PHONY : CMakeFiles/My_Tests.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/C++/Test/cmake-build-debug/CMakeFiles 20
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Tests.dir/all
+CMakeFiles/My_Tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/C++/Test/cmake-build-debug/CMakeFiles 14
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/My_Tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/C++/Test/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Tests.dir/rule
+.PHONY : CMakeFiles/My_Tests.dir/rule
 
 # Convenience name for target.
-Tests: CMakeFiles/Tests.dir/rule
-.PHONY : Tests
+My_Tests: CMakeFiles/My_Tests.dir/rule
+.PHONY : My_Tests
 
 # codegen rule for target.
-CMakeFiles/Tests.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12,13,14,15,16,17,18 "Finished codegen for target Tests"
-.PHONY : CMakeFiles/Tests.dir/codegen
+CMakeFiles/My_Tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target My_Tests"
+.PHONY : CMakeFiles/My_Tests.dir/codegen
 
 # clean rule for target.
-CMakeFiles/Tests.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/clean
-.PHONY : CMakeFiles/Tests.dir/clean
+CMakeFiles/My_Tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/clean
+.PHONY : CMakeFiles/My_Tests.dir/clean
 
 #=============================================================================
-# Target rules for target /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir
+# Target rules for target /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir
 
 # All Build rule for target.
-/home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/all: /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/all
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target SQLiteCpp"
-.PHONY : /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/all
+/home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/all: /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/all
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8,9,10,11,12 "Built target SQLiteCpp"
+.PHONY : /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/all
 
 # Build rule for subdir invocation for target.
-/home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/rule: cmake_check_build_system
+/home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/C++/Test/cmake-build-debug/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/C++/Test/cmake-build-debug/CMakeFiles 0
-.PHONY : /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/rule
+.PHONY : /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/rule
 
 # Convenience name for target.
-SQLiteCpp: /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/rule
+SQLiteCpp: /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/rule
 .PHONY : SQLiteCpp
 
 # codegen rule for target.
-/home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target SQLiteCpp"
-.PHONY : /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/codegen
+/home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8,9,10,11,12 "Finished codegen for target SQLiteCpp"
+.PHONY : /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/codegen
 
 # clean rule for target.
-/home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/clean
-.PHONY : /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/clean
+/home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/clean
+.PHONY : /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/clean
 
 #=============================================================================
-# Target rules for target /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir
+# Target rules for target /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir
 
 # All Build rule for target.
-/home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/all:
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/depend
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=19,20 "Built target sqlite3"
-.PHONY : /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/all
+/home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/all:
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/depend
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target sqlite3"
+.PHONY : /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/all
 
 # Build rule for subdir invocation for target.
-/home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/rule: cmake_check_build_system
+/home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/C++/Test/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/C++/Test/cmake-build-debug/CMakeFiles 0
-.PHONY : /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/rule
+.PHONY : /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/rule
 
 # Convenience name for target.
-sqlite3: /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/rule
+sqlite3: /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/rule
 .PHONY : sqlite3
 
 # codegen rule for target.
-/home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=19,20 "Finished codegen for target sqlite3"
-.PHONY : /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/codegen
+/home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/C++/Test/cmake-build-debug/CMakeFiles --progress-num=13,14 "Finished codegen for target sqlite3"
+.PHONY : /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/codegen
 
 # clean rule for target.
-/home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/clean:
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/clean
-.PHONY : /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/clean
+/home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/clean:
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/clean
+.PHONY : /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

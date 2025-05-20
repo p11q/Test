@@ -1,14 +1,18 @@
 #include "insert.h"
 
-//INSERT INTO table_name VALUES(value1, value2, value3, ...);
+//INSERT INTO table_name (column_name, ... , column_name) VALUES (value1, value2, value3, ...);
 
-void Insert::SQL_request() {
-    request_ += name_table_ + " VALUES (";
-    for (int i{0}; i < columns_values_.size(); i++) {
-        if(i != columns_values_.size() - 1) {
-            request_ += "'" + columns_values_[i] + "', ";
-        } else {
-            request_ += "'" + columns_values_[i] + "')";
-        }
+std::string Insert::GetRequestPlainText() {
+    request_ += " " + table_name_ + "(";
+    for (const auto& column_name : column_names_) {
+        request_ += " '" + column_name + "',";
     }
+    request_.back() = ')';
+
+    request_ += " " + std::string("VALUES") + "(";
+    for (const auto& val : values_) {
+        request_ += " '" + val + "',";
+    }
+    request_.back() = ')';
+    return request_;
 }

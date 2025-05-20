@@ -1,28 +1,31 @@
-#ifndef COLUMNS_H
-#define COLUMNS_H
+#ifndef SELECT_H
+#define SELECT_H
 
-#include <utility>
 #include <vector>
 
 #include "sql_requests.h"
 
-class Select : public SqliteRequest{
+class Select : public ISQLRequest{
 private:
-    std::string name_table_;
-    std::string request_{"SELECT "};
-    std::vector<std::string> columns_{};
+    std::string request_{"SELECT"};
+    std::string table_name_;
+    std::vector<std::string> column_names_;
 public:
+    explicit Select() = default;
+    ~Select() override = default;
 
-    explicit Select(const std::string_view name_table, std::vector<std::string> &columns)
-        :name_table_(name_table), columns_(std::move(columns)) {}
-
-    void SQL_request() override;
-
-    std::string GetRequest() override {
-        return request_;
+    void AddTableName(const std::string& table_name) override {
+        table_name_ = table_name;
     }
+
+    void AddColumns(const std::vector<std::string>& columns) override {
+        column_names_ = columns;
+    }
+
+
+    std::string GetRequestPlainText() override;
 };
 
 
 
-#endif //COLUMNS_H
+#endif //SELECT_H

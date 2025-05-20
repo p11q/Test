@@ -199,7 +199,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Tests
+CMAKE_PROJECT_NAME:STATIC=My_Tests
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=3.3.2
@@ -284,6 +284,15 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Path to a program.
 CPPCHECK_EXECUTABLE:FILEPATH=CPPCHECK_EXECUTABLE-NOTFOUND
 
+//Value Computed by CMake
+My_Tests_BINARY_DIR:STATIC=/home/user/C++/Test/cmake-build-debug
+
+//Value Computed by CMake
+My_Tests_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+My_Tests_SOURCE_DIR:STATIC=/home/user/C++/Test
+
 //Build examples.
 SQLITECPP_BUILD_EXAMPLES:BOOL=OFF
 
@@ -346,7 +355,7 @@ SQLITE_OMIT_LOAD_EXTENSION:BOOL=OFF
 SQLITE_USE_LEGACY_STRUCT:BOOL=OFF
 
 //Value Computed by CMake
-SQLiteCpp_BINARY_DIR:STATIC=/home/user/C++/Test/google_test
+SQLiteCpp_BINARY_DIR:STATIC=/home/user/C++/Test/unit_tests
 
 //Value Computed by CMake
 SQLiteCpp_IS_TOP_LEVEL:STATIC=OFF

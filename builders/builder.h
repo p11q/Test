@@ -1,15 +1,19 @@
 #ifndef BUILDER_H
 #define BUILDER_H
-#include <sql_requests.h>
-#include <create/create.h>
+#include "sql_requests.h"
 
 
-class Builder {
+class IBuilder {
 public:
-    virtual ~Builder() = default;
-    virtual void CreateSQLRequest() = 0;
-    virtual void UsegeSQLRequests() = 0;
-    
+    virtual ~IBuilder() = default;
+
+    virtual void CreateTableName() {}
+    virtual void CreateColumns() {}
+    virtual void CreateValues() {}
+    virtual void CreateColumnTypes() {}
+
+    virtual void GetRequest() = 0;
+
 };
 
 #endif //BUILDER_H

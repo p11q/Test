@@ -1,26 +1,48 @@
 #ifndef CREATE_H
 #define CREATE_H
 
+#include <unordered_map>
 #include <vector>
 
 #include "sql_requests.h"
 
-class Create : public SqliteRequest{
+class CreateTable : public ISQLRequest{
 private:
-    std::string name_table_;
-    std::string request_{"CREATE TABLE IF NOT EXISTS "};
-    std::vector<std::vector<std::string>> name_columns_;
+    std::string table_name_;
+    std::string request_{"CREATE TABLE IF NOT EXISTS"};
+    std::unordered_map<std::string, std::string> columns_and_types_;
 public:
-    explicit Create(const std::string_view name_table, const std::vector<std::vector<std::string>> &name_columns)
-        :name_table_(name_table), name_columns_(name_columns) {}
+    explicit CreateTable() = default;
+    ~CreateTable() override = default;
 
-    void SQL_request() override;
+    void AddTableName(const std::string& table_name) override {
+        table_name_ = table_name;
+    }
 
-    std::string GetRequest() override {
+    void AddColumns(const std::vector<std::string>& columns) override {
+        for (const auto& column_name : columns) {
+            columns_and_types_[column_name] = {};
+        }
+    }
+
+    void AddColumnTypes(const std::map<std::string, std::string> &column_types) override {
+        for (const auto& [column_name , column_type] : column_types) {
+            if (columns_and_types_.contains(column_name)) {
+                columns_and_types_[column_name] = column_type;
+            }
+        }
+    }
+
+    std::string GetRequestPlainText() override {
+        request_ += " " + table_name_ + " (";
+        for (const auto& [column_name, column_type] : columns_and_types_) {
+            request_ += "'" + column_name + "' " + column_type + ",";
+        }
+        request_.back() = ')';
         return request_;
     }
 };
 
 
 
-#endif //CREATE_TABLE_H
+#endif //CREATE_H

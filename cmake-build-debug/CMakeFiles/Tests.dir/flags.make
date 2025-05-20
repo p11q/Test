@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DSQLITE_ENABLE_COLUMN_METADATA
 
-CXX_INCLUDES = -I/home/user/C++/Test/lib/JSON/include -I/home/user/C++/Test/sql_requests -I/home/user/C++/Test/builders -I/home/user/C++/Test/directors -I/home/user/C++/Test/lib/SQLiteCpp/include -I/home/user/C++/Test/lib/SQLiteCpp/sqlite3
+CXX_INCLUDES = -I/home/user/C++/Test/lib/JSON/include -I/home/user/C++/Test/sql_requests -I/home/user/C++/Test/builders -I/home/user/C++/Test/directors -I/home/user/C++/Test/lib/googletest-1.17.0/googletest/include/gtest -I/home/user/C++/Test/lib/SQLiteCpp/include -I/home/user/C++/Test/lib/SQLiteCpp/sqlite3
 
-CXX_FLAGS = -g -fdiagnostics-color=always
+CXX_FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
 

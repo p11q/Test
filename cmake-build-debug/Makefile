@@ -162,17 +162,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Tests
+# Target rules for targets named My_Tests
 
 # Build rule for target.
-Tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Tests
-.PHONY : Tests
+My_Tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 My_Tests
+.PHONY : My_Tests
 
 # fast build rule for target.
-Tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/build
-.PHONY : Tests/fast
+My_Tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/build
+.PHONY : My_Tests/fast
 
 #=============================================================================
 # Target rules for targets named SQLiteCpp
@@ -184,7 +184,7 @@ SQLiteCpp: cmake_check_build_system
 
 # fast build rule for target.
 SQLiteCpp/fast:
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/google_test/CMakeFiles/SQLiteCpp.dir/build
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/build.make /home/user/C++/Test/unit_tests/CMakeFiles/SQLiteCpp.dir/build
 .PHONY : SQLiteCpp/fast
 
 #=============================================================================
@@ -197,111 +197,15 @@ sqlite3: cmake_check_build_system
 
 # fast build rule for target.
 sqlite3/fast:
-	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/google_test/sqlite3/CMakeFiles/sqlite3.dir/build
+	$(MAKE) $(MAKESILENT) -f /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/build.make /home/user/C++/Test/unit_tests/sqlite3/CMakeFiles/sqlite3.dir/build
 .PHONY : sqlite3/fast
-
-builders/create_build/create_build.o: builders/create_build/create_build.cpp.o
-.PHONY : builders/create_build/create_build.o
-
-# target to build an object file
-builders/create_build/create_build.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/create_build/create_build.cpp.o
-.PHONY : builders/create_build/create_build.cpp.o
-
-builders/create_build/create_build.i: builders/create_build/create_build.cpp.i
-.PHONY : builders/create_build/create_build.i
-
-# target to preprocess a source file
-builders/create_build/create_build.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/create_build/create_build.cpp.i
-.PHONY : builders/create_build/create_build.cpp.i
-
-builders/create_build/create_build.s: builders/create_build/create_build.cpp.s
-.PHONY : builders/create_build/create_build.s
-
-# target to generate assembly for a file
-builders/create_build/create_build.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/create_build/create_build.cpp.s
-.PHONY : builders/create_build/create_build.cpp.s
-
-builders/drop_builder/drop_builder.o: builders/drop_builder/drop_builder.cpp.o
-.PHONY : builders/drop_builder/drop_builder.o
-
-# target to build an object file
-builders/drop_builder/drop_builder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/drop_builder/drop_builder.cpp.o
-.PHONY : builders/drop_builder/drop_builder.cpp.o
-
-builders/drop_builder/drop_builder.i: builders/drop_builder/drop_builder.cpp.i
-.PHONY : builders/drop_builder/drop_builder.i
-
-# target to preprocess a source file
-builders/drop_builder/drop_builder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/drop_builder/drop_builder.cpp.i
-.PHONY : builders/drop_builder/drop_builder.cpp.i
-
-builders/drop_builder/drop_builder.s: builders/drop_builder/drop_builder.cpp.s
-.PHONY : builders/drop_builder/drop_builder.s
-
-# target to generate assembly for a file
-builders/drop_builder/drop_builder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/drop_builder/drop_builder.cpp.s
-.PHONY : builders/drop_builder/drop_builder.cpp.s
-
-builders/insert_builder/insert_builder.o: builders/insert_builder/insert_builder.cpp.o
-.PHONY : builders/insert_builder/insert_builder.o
-
-# target to build an object file
-builders/insert_builder/insert_builder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/insert_builder/insert_builder.cpp.o
-.PHONY : builders/insert_builder/insert_builder.cpp.o
-
-builders/insert_builder/insert_builder.i: builders/insert_builder/insert_builder.cpp.i
-.PHONY : builders/insert_builder/insert_builder.i
-
-# target to preprocess a source file
-builders/insert_builder/insert_builder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/insert_builder/insert_builder.cpp.i
-.PHONY : builders/insert_builder/insert_builder.cpp.i
-
-builders/insert_builder/insert_builder.s: builders/insert_builder/insert_builder.cpp.s
-.PHONY : builders/insert_builder/insert_builder.s
-
-# target to generate assembly for a file
-builders/insert_builder/insert_builder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/insert_builder/insert_builder.cpp.s
-.PHONY : builders/insert_builder/insert_builder.cpp.s
-
-builders/select_builder/select_builder.o: builders/select_builder/select_builder.cpp.o
-.PHONY : builders/select_builder/select_builder.o
-
-# target to build an object file
-builders/select_builder/select_builder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/select_builder/select_builder.cpp.o
-.PHONY : builders/select_builder/select_builder.cpp.o
-
-builders/select_builder/select_builder.i: builders/select_builder/select_builder.cpp.i
-.PHONY : builders/select_builder/select_builder.i
-
-# target to preprocess a source file
-builders/select_builder/select_builder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/select_builder/select_builder.cpp.i
-.PHONY : builders/select_builder/select_builder.cpp.i
-
-builders/select_builder/select_builder.s: builders/select_builder/select_builder.cpp.s
-.PHONY : builders/select_builder/select_builder.s
-
-# target to generate assembly for a file
-builders/select_builder/select_builder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/builders/select_builder/select_builder.cpp.s
-.PHONY : builders/select_builder/select_builder.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -309,7 +213,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -317,39 +221,15 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-sql_requests/create/create.o: sql_requests/create/create.cpp.o
-.PHONY : sql_requests/create/create.o
-
-# target to build an object file
-sql_requests/create/create.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/create/create.cpp.o
-.PHONY : sql_requests/create/create.cpp.o
-
-sql_requests/create/create.i: sql_requests/create/create.cpp.i
-.PHONY : sql_requests/create/create.i
-
-# target to preprocess a source file
-sql_requests/create/create.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/create/create.cpp.i
-.PHONY : sql_requests/create/create.cpp.i
-
-sql_requests/create/create.s: sql_requests/create/create.cpp.s
-.PHONY : sql_requests/create/create.s
-
-# target to generate assembly for a file
-sql_requests/create/create.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/create/create.cpp.s
-.PHONY : sql_requests/create/create.cpp.s
 
 sql_requests/insert/insert.o: sql_requests/insert/insert.cpp.o
 .PHONY : sql_requests/insert/insert.o
 
 # target to build an object file
 sql_requests/insert/insert.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/insert/insert.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/sql_requests/insert/insert.cpp.o
 .PHONY : sql_requests/insert/insert.cpp.o
 
 sql_requests/insert/insert.i: sql_requests/insert/insert.cpp.i
@@ -357,7 +237,7 @@ sql_requests/insert/insert.i: sql_requests/insert/insert.cpp.i
 
 # target to preprocess a source file
 sql_requests/insert/insert.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/insert/insert.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/sql_requests/insert/insert.cpp.i
 .PHONY : sql_requests/insert/insert.cpp.i
 
 sql_requests/insert/insert.s: sql_requests/insert/insert.cpp.s
@@ -365,7 +245,7 @@ sql_requests/insert/insert.s: sql_requests/insert/insert.cpp.s
 
 # target to generate assembly for a file
 sql_requests/insert/insert.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/insert/insert.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/sql_requests/insert/insert.cpp.s
 .PHONY : sql_requests/insert/insert.cpp.s
 
 sql_requests/select/select.o: sql_requests/select/select.cpp.o
@@ -373,7 +253,7 @@ sql_requests/select/select.o: sql_requests/select/select.cpp.o
 
 # target to build an object file
 sql_requests/select/select.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/select/select.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/sql_requests/select/select.cpp.o
 .PHONY : sql_requests/select/select.cpp.o
 
 sql_requests/select/select.i: sql_requests/select/select.cpp.i
@@ -381,7 +261,7 @@ sql_requests/select/select.i: sql_requests/select/select.cpp.i
 
 # target to preprocess a source file
 sql_requests/select/select.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/select/select.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/sql_requests/select/select.cpp.i
 .PHONY : sql_requests/select/select.cpp.i
 
 sql_requests/select/select.s: sql_requests/select/select.cpp.s
@@ -389,32 +269,8 @@ sql_requests/select/select.s: sql_requests/select/select.cpp.s
 
 # target to generate assembly for a file
 sql_requests/select/select.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/select/select.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My_Tests.dir/build.make CMakeFiles/My_Tests.dir/sql_requests/select/select.cpp.s
 .PHONY : sql_requests/select/select.cpp.s
-
-sql_requests/sql_requests.o: sql_requests/sql_requests.cpp.o
-.PHONY : sql_requests/sql_requests.o
-
-# target to build an object file
-sql_requests/sql_requests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/sql_requests.cpp.o
-.PHONY : sql_requests/sql_requests.cpp.o
-
-sql_requests/sql_requests.i: sql_requests/sql_requests.cpp.i
-.PHONY : sql_requests/sql_requests.i
-
-# target to preprocess a source file
-sql_requests/sql_requests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/sql_requests.cpp.i
-.PHONY : sql_requests/sql_requests.cpp.i
-
-sql_requests/sql_requests.s: sql_requests/sql_requests.cpp.s
-.PHONY : sql_requests/sql_requests.s
-
-# target to generate assembly for a file
-sql_requests/sql_requests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/sql_requests/sql_requests.cpp.s
-.PHONY : sql_requests/sql_requests.cpp.s
 
 # Help Target
 help:
@@ -428,36 +284,18 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... My_Tests"
 	@echo "... SQLiteCpp"
-	@echo "... Tests"
 	@echo "... sqlite3"
-	@echo "... builders/create_build/create_build.o"
-	@echo "... builders/create_build/create_build.i"
-	@echo "... builders/create_build/create_build.s"
-	@echo "... builders/drop_builder/drop_builder.o"
-	@echo "... builders/drop_builder/drop_builder.i"
-	@echo "... builders/drop_builder/drop_builder.s"
-	@echo "... builders/insert_builder/insert_builder.o"
-	@echo "... builders/insert_builder/insert_builder.i"
-	@echo "... builders/insert_builder/insert_builder.s"
-	@echo "... builders/select_builder/select_builder.o"
-	@echo "... builders/select_builder/select_builder.i"
-	@echo "... builders/select_builder/select_builder.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... sql_requests/create/create.o"
-	@echo "... sql_requests/create/create.i"
-	@echo "... sql_requests/create/create.s"
 	@echo "... sql_requests/insert/insert.o"
 	@echo "... sql_requests/insert/insert.i"
 	@echo "... sql_requests/insert/insert.s"
 	@echo "... sql_requests/select/select.o"
 	@echo "... sql_requests/select/select.i"
 	@echo "... sql_requests/select/select.s"
-	@echo "... sql_requests/sql_requests.o"
-	@echo "... sql_requests/sql_requests.i"
-	@echo "... sql_requests/sql_requests.s"
 .PHONY : help
 
 
